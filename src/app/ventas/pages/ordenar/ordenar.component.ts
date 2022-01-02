@@ -8,6 +8,8 @@ import { Heroe, Color } from '../../interfaces/ventas.interfaces';
 })
 export class OrdenarComponent {
   enMayusculas: boolean = false;
+  ordenAscendente: boolean = true;
+  ordenarPor: string = '';
   heroes: Heroe[] = [
     {
       nombre: 'SuperFleki',
@@ -37,5 +39,9 @@ export class OrdenarComponent {
   ];
   toggleMayusculas(): void {
     this.enMayusculas = !this.enMayusculas;
+  }
+  toggleOrden(ordenarPor: string): void {
+    this.ordenAscendente = !this.ordenAscendente;
+    this.ordenarPor = ordenarPor;
   }
 }
