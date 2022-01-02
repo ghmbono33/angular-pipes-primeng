@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PrimeNGConfig } from 'primeng/api';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,12 @@ export class AppComponent {
   obj = {
     nombre: 'MaNOlo bono',
   };
+  constructor(private primengConfig: PrimeNGConfig) {}
+
+  ngOnInit() {
+    //Para que haga el efecto al hacer click
+    this.primengConfig.ripple = true;
+  }
   mostrarNombre() {
     console.log(this.nombre);
     console.log(this.valor);

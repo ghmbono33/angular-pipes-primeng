@@ -1,1 +1,28 @@
-<h1 class="texto-blanco">numeros works!</h1>
+<div class="texto-blanco">
+  <h1>Pipes Decimales y de porcentaje</h1>
+  <p>Pipes incluídos en Angular - en el Common Module</p>
+  <!-- grid, col es una clase de PrimeFlex (primeNg) -->
+  <div class="grid">
+    <div class="col-4">
+      <p-card header="Ventas Neta" [subheader]="'del presente año (number)'">
+        <!-- 2 decimales -->
+        {{ ventasNetas | number: ".2-2" }}
+        <i class="pi pi-euro"></i>
+      </p-card>
+    </div>
+    <div class="col-4">
+      <p-card
+        header="Ventas Brutas"
+        [subheader]="'del presente año (currency)'"
+      >
+        {{ ventasNetas | currency: "€" }}
+      </p-card>
+    </div>
+    <div class="col-4">
+      <p-card header="Ganancias % " [subheader]="'del presente año (percent)'">
+        <!-- 2 decimales -->
+        {{ porcentaje | percent: ".2-2" }}
+      </p-card>
+    </div>
+  </div>
+</div>
